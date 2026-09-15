@@ -21,7 +21,7 @@ This project was built focusing heavily on **clean architecture, strict validati
 ## ✨ Features
 
 - **End-to-end Job Management**: Create, view, update, and permanently delete background jobs.
-- **Strict State Machine**: Jobs follow a strict `pending → running → completed/failed` lifecycle enforced cryptographically at the database tier.
+- **Strict State Machine**: Jobs follow a strict `pending → running → completed/failed` lifecycle enforced using atomic conditional database updates.
 - **Race Condition Protection**: Safe against concurrent requests manipulating the same job via atomic conditional updates (handling edge cases like double-clicks or multiple open tabs).
 - **Extensive Input Validation**: Inputs are trimmed and constrained. Malformed payloads, unknown fields, and invalid UUIDs are automatically rejected.
 - **Professional UI**: Responsive, minimally designed interface featuring dynamic metrics, pills, empty states, and loading overlays.
@@ -112,7 +112,7 @@ Permanently deletes a job, returning `204 No Content` on success or `404 Not Fou
 ## 🔐 Engineering Decisions & Core Mechanics
 
 ### 1. Database & Persistence
-We chose `better-sqlite3` and `TypeORM` to maintain persistent state effortlessly on the filesystem without requiring a standalone database daemon (e.g., Postgres or Redis). The `jobs` entity uses native UUIDs.
+We chose `better-sqlite3` and `TypeORM` to maintain persistent state effortlessly on the filesystem without requiring a standalone database daemon (e.g., Postgres or Redis). The `jobs` entity uses UUID strings for unique identifiers.
 
 ### 2. Validation & Security
 The backend acts as an absolute source of truth. The frontend is never trusted.
