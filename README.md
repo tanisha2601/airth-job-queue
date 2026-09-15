@@ -2,19 +2,31 @@
 
 A full-stack application built to manage, monitor, and transition background jobs securely and concurrently. 
 
-This project was built focusing heavily on **clean architecture, strict validation, robust concurrency, and responsive design**. It uses NestJS and SQLite for a highly resilient backend that strictly enforces business logic rules independently of the frontend, which is a minimalist React/Vite application.
+This project was built focusing heavily on **clean architecture, strict validation, robust concurrency, and responsive design**. It uses NestJS and SQLite for a lightweight backend with strict validation, business-rule enforcement, and concurrency-safe state transitions.
 
 ---
 
 ## 📸 Screenshots
 
-| Dashboard (All Jobs) | Create Job Modal | Filtered (Running) |
-| --- | --- | --- |
-| *[Screenshot Placeholder: Dashboard]* | *[Screenshot Placeholder: Create Job]* | *[Screenshot Placeholder: Running]* |
+### Dashboard — All Jobs
 
-| Completed Job | Failed Job | Empty State |
-| --- | --- | --- |
-| *[Screenshot Placeholder: Completed]* | *[Screenshot Placeholder: Failed]* | *[Screenshot Placeholder: Empty State]* |
+![Dashboard](frontend/public/screenshots/dashboard.png)
+
+### Create Job
+
+![Create Job](frontend/public/screenshots/create-job.png)
+
+### Running Jobs Filter
+
+![Running Jobs](frontend/public/screenshots/running-filter.png)
+
+### Completed and Failed Jobs
+
+![Completed and Failed Jobs](frontend/public/screenshots/completed-failed.png)
+
+### Empty State
+
+![Empty State](frontend/public/screenshots/empty-state.png)
 
 ---
 
@@ -67,6 +79,11 @@ This project was built focusing heavily on **clean architecture, strict validati
 ---
 
 ## 🚀 Setup & Execution
+
+### Live URLs
+- **Frontend**: https://airth-job-queue.vercel.app
+- **Backend API**: https://airth-job-queue.onrender.com
+- **Health Check**: https://airth-job-queue.onrender.com/health
 
 ### 1. Run Backend
 
